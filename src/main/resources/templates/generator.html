@@ -3,14 +3,24 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>practice - msg: generator</title>
+	<link href="/resources/common/common.css" rel="stylesheet">
+	<script src="/resources/common/common.js" type="text/javascript"></script>
 </head>
 <body>
 	<div>
-		<input type="text">
-		<button type="button">입력</button>
+		<input type="radio">현재 시간 동기화
+		<input type="radio">시간 유지
+		<input type="radio"><input type="number">분 후
 	</div>
 	<div>
-		<button type="submit">생성</button>
+		<input type="text">
+		<button type="button" onclick="msgOnboard();">입력</button>
+	</div>
+	<div>
+		<button type="submit" onclick="popup();">생성</button>
+		<!-- 
+			<a href="#" download>생성</a>
+		 -->
 	</div>
 </body>
 </html>
