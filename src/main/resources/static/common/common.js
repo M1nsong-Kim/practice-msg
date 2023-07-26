@@ -1,3 +1,5 @@
+var msg = [];	// 객체 배열
+
 // 입력한 메시지 창 화면에 띄우기
 function msgOnBoard(){
 	

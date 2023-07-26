@@ -8,10 +8,32 @@
 </head>
 <body>
 	<div>
-		<input type="radio">현재 시간 동기화
-		<input type="radio">시간 유지
-		<input type="radio"><input type="number">분 후
+		<div>생성을 누르지 않으면 이전 대화는 저장되지 않습니다.</div>
+		<button type="button">초기화</button>
 	</div>
+	<div>
+		<!-- 화자 -->
+		<input type="radio">나
+		<!-- if로 가르기 -->
+		<input type="radio">상대방
+		<button type="button" onclick="popup_opponent();">+</button>
+		
+		<!-- 시간 -->
+		<input type="radio">현재 시간
+		<input type="radio">
+		<select>
+			<option>오전</option>
+			<option>오후</option>
+		</select>
+		<input type="number">시<input type="number">분
+		<input type="radio">이전 시간 유지
+	</div>
+	
+	<!-- 대화창 -->
+	<div>
+	
+	</div>
+	
 	<div>
 		<input type="text">
 		<button type="button" onclick="msgOnboard();">입력</button>
