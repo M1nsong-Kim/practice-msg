@@ -10,6 +10,8 @@ public class Chat {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)	// PK, DB가 알아서 생성(identity)
 	private int idx;
 	
+	private int useNo;
+
 	private int group;
 	
 	private String fromName;
@@ -28,6 +30,14 @@ public class Chat {
 
 	public void setIdx(int idx) {
 		this.idx = idx;
+	}
+
+	public int getUseNo() {
+		return useNo;
+	}
+	
+	public void setUseNo(int useNo) {
+		this.useNo = useNo;
 	}
 
 	public int getGroup() {
