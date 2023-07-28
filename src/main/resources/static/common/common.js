@@ -8,10 +8,18 @@ function msgOnBoard(){
 	console.log(speaker);
 	console.log(content);
 	
-	if(speaker == 0){	// 나 -> 오른쪽
+	if(speaker == 0){	
+		// 나 -> 오른쪽
+		$('').addClass('toTheRight');
+		$('').removeClass('toTheLeft');
 		
+		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}else{
+		// 왼쪽으로
+		$('').addClass('toTheLeft');
+		$('').removeClass('toTheRight');
 		
+		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}
 	
 	// 다 하고 text창 비우기
