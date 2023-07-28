@@ -1,1 +1,13 @@
 @charset "UTF-8";
+
+.toTheRight{
+	float: right;
+	align-content: right;
+	text-align: left;	/* 글 자체는 왼쪽 정렬 */
+}
+
+.toTheLeft{
+	float: left;
+	align-content: left;
+	text-align: left;
+}
