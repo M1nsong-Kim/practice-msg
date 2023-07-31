@@ -63,7 +63,12 @@ function msgOnBoard(){
 	$('#content').val('');
 }
 
+// 상대방 추가
+function popup_opponent(){
+	var popup = window.open('popup_opponent.html', 'popup_opponent', 'width=700px,height=800px,scrollbars=yes');
+}
+
 // 저장 전 이미지 확인 팝업
-function popup(){
-	
+function popup_imgDownload(){
+	var popup = window.open('popup_imgDownload.html', 'popup_imgDownload', 'width=700px,height=800px,scrollbars=yes');
 }
