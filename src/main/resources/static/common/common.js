@@ -29,9 +29,10 @@ function msgOnBoard(){
 	msg.content = $('#content').val();	// msg.contect를 말풍선으로 감싸기
 	var msgBox = 'msgBox';	 // 각 메시지 박스 이름(혹시 몰라 변수로 선언)
 	
-	console.log(msg.speaker);
-	console.log(msg.content);
-	console.log(msg.time);
+	if(msg.content.trim() == ''){
+		alert('공백 입력 불가');
+		return;
+	}
 	
 	var code = "<li id='" + msgBox + "' name='" + msgBox + "'" + " class='";
 	/*
@@ -44,13 +45,15 @@ function msgOnBoard(){
 	if(msg.speaker == 0){	
 		// 나 -> 오른쪽
 		code += "toTheRight'>"
-			 + msg.time + " " + msg.content;
+			 + msg.time + " "
+			 + "<div class='talk-bubble tri-right round right-in'> <div class='talktext'> <p>" + msg.content + "</p> </div> </div>";
 			 
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}else{
 		// 상대 -> 왼쪽
 		code += "toTheLeft'>"
-			 + msg.content + " " + msg.time;
+			 + "<div class='talk-bubble tri-right round left-in'> <div class='talktext'> <p>" + msg.content + "</p> </div> </div>"
+			 + " " + msg.time;
 		
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}
@@ -65,10 +68,10 @@ function msgOnBoard(){
 
 // 상대방 추가
 function popup_opponent(){
-	var popup = window.open('popup_opponent.html', 'popup_opponent', 'width=700px,height=800px,scrollbars=yes');
+	var popup = window.open('/popupOpponent', 'popup_opponent', 'width=700px,height=800px,scrollbars=yes');
 }
 
 // 저장 전 이미지 확인 팝업
 function popup_imgDownload(){
-	var popup = window.open('popup_imgDownload.html', 'popup_imgDownload', 'width=700px,height=800px,scrollbars=yes');
+	var popup = window.open('/popupImgDownload', 'popup_imgDownload', 'width=700px,height=800px,scrollbars=yes');
 }
