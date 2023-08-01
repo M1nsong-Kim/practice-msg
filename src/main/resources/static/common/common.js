@@ -71,6 +71,11 @@ function popup_opponent(){
 	var popup = window.open('/popupOpponent', 'popup_opponent', 'width=700px,height=800px,scrollbars=yes');
 }
 
+// 입/퇴장 메시지
+function popup_inNout(){
+	var popup = window.open('/popupIn&out', 'popup_inNout', 'width=700px,height=800px,scrollbars=yes');
+}
+
 // 저장 전 이미지 확인 팝업
 function popup_imgDownload(){
 	var popup = window.open('/popupImgDownload', 'popup_imgDownload', 'width=700px,height=800px,scrollbars=yes');
