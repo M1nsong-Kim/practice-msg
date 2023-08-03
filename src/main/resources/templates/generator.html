@@ -9,57 +9,59 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
-	<div>
-		<div>생성을 누르지 않으면 이전 대화는 저장되지 않습니다.</div>
-		<button type="button">초기화</button>
-	</div>
-	
-	<br>
-	<!-- 대화창 -->
-	<div>
-		<ul id="chat">
-			
-		</ul>
-	</div>
-	<br>
-	
-	<div>
-		<!-- 화자 -->
-		<input type="radio" name="speaker" id="speaker0" value="0" checked>나
-		<!-- if로 가르기 -->
-			<!-- 상대로 등록된 리스트. value는 각각 idx -->
-		<input type="radio" name="speaker" id="speaker#" value="#">#
-		<button type="button" onclick="popup_opponent();">+</button>
+	<div class="container">
+		<div>
+			<div>생성을 누르지 않으면 이전 대화는 저장되지 않습니다.</div>
+			<button type="button">초기화</button>
+		</div>
 		
-		<!-- 시간 -->
-		<input type="radio">현재 시간
-		<input type="radio">
-		<select>
-			<option>당일</option>
-			<option>직접입력</option>
-			<!--  -->
-		</select>
-		<select>
-			<option>오전</option>
-			<option>오후</option>
-		</select>
-		<input type="number">시<input type="number">분
-		<input type="radio">이전 시간 유지
-	</div>
-	
-	<div>
-		<input type="text" name="content" id="content" onkeyup="pressEnter();">
-		<button type="button" onclick="msgOnBoard();">입력</button>
-	</div>
-	<div>
-		<button type="button"  onclick="popup_inNout();">입/퇴장 메시지</button>
-	</div>
-	<div>
-		<!-- onkeyup X -->
-		<button type="submit" id="generator" onclick="popup_imgDownload();">생성</button>
-		<!-- 
-			<a href="#" download>생성</a>
-		 -->
+		<br>
+		<!-- 대화창 -->
+		<div>
+			<ul id="chat">
+				
+			</ul>
+		</div>
+		<br>
+		
+		<div>
+			<!-- 화자 -->
+			<input type="radio" name="speaker" id="speaker0" value="0" checked>나
+			<!-- if로 가르기 -->
+				<!-- 상대로 등록된 리스트. value는 각각 idx -->
+			<input type="radio" name="speaker" id="speaker#" value="#">#
+			<button type="button" onclick="popup_opponent();">+</button>
+			
+			<!-- 시간 -->
+			<input type="radio">현재 시간
+			<input type="radio">
+			<select>
+				<option>당일</option>
+				<option>직접입력</option>
+				<!--  -->
+			</select>
+			<select>
+				<option>오전</option>
+				<option>오후</option>
+			</select>
+			<input type="number">시<input type="number">분
+			<input type="radio">이전 시간 유지
+		</div>
+		
+		<div>
+			<input type="text" name="content" id="content" onkeyup="pressEnter();">
+			<button type="button" onclick="msgOnBoard();">입력</button>
+		</div>
+		<div>
+			<button type="button"  onclick="popup_inNout();">입/퇴장 메시지</button>
+		</div>
+		<div>
+			<!-- onkeyup X -->
+			<button type="submit" id="generator" onclick="popup_imgDownload();">생성</button>
+			<!-- 
+				<a href="#" download>생성</a>
+			 -->
+		</div>
 	</div>
 </body>
 </html>

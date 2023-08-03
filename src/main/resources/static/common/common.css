@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.container{
+	display: grid;
+}
+
 .toTheRight{
 	/* float: right; */ /* 오른쪽 정렬이 안됨*/	
 	align-content: right;
@@ -29,7 +33,7 @@ ul{
 	background: #fff99e;
 	border-radius: .4em;
 	height: 2.0em;
-	width: 40%;
+	max-width: 40%;
 }
 
 .bubble-right:after {
@@ -52,7 +56,7 @@ ul{
 	background: #fff99e;
 	border-radius: .4em;
 	height: 2.0em;
-	width: 40%;
+	max-width: 40%;
 }
 
 .bubble-left:after {
@@ -68,4 +72,9 @@ ul{
 	border-top: 0;
 	margin-top: -10px;
 	margin-left: -20px;
+}
+
+.text{
+	vertical-align: middle;
+	margin: 0.5em;
 }
