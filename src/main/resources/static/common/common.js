@@ -34,7 +34,7 @@ function msgOnBoard(){
 		return;
 	}
 	
-	var code = "<li id='" + msgBox + "' name='" + msgBox + "'" + " class='";
+	var code = "<div " + " class='";
 	/*
 	var code = document.createElement('li');
 	code.setAttribute("id", msgBox);
@@ -44,23 +44,23 @@ function msgOnBoard(){
 	
 	if(msg.speaker == 0){	
 		// 나 -> 오른쪽
-		code += "toTheRight'>"
+		code += "chat right'>"
 			 + msg.time + " "
 			 + "<div class='box'> <div class='bubble-right'> <span class='text'>" + msg.content + "</span> </div> </div>";
 			 
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}else{
 		// 상대 -> 왼쪽
-		code += "toTheLeft'>"
+		code += "chat left'>"
 			 + "<div class='box'> <div class='bubble-left'> <span class='text'>" + msg.content + "</span> </div> </div>"
 			 + " " + msg.time;
 		
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}
-	code += "</li> <br>";
+	code += "</div>";
 	
 	console.log(code);
-	$('#chat').append(code);
+	$('.container').append(code);
 	
 	// 다 하고 text창 비우기
 	$('#content').val('');
