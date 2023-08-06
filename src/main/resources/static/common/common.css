@@ -2,23 +2,23 @@
 
 .container{
 	display: flex;
+	/*
 	flex-direction: column;
+	flex-wrap: wrap; /* 한줄 공간 부족 -> 다음줄로
+	*/
+	flex-flow: column wrap;
 }
 
 .chat{
 	display: flex;
 }
 
-.toTheRight{
-	/* float: right; */ /* 오른쪽 정렬이 안됨*/	
-	align-content: right;
-	text-align: left;	/* 글 자체는 왼쪽 정렬 */
+.right{
+	margin-left: auto;
 }
 
-.toTheLeft{
-	/* float: left; */
-	align-content: left;
-	text-align: left;
+.left{
+	
 }
 
 /* li 점, 여백 없애기 */
@@ -27,18 +27,19 @@ ul{
    padding-left:0px;
 }
 
-/*
 .box {
-	padding: 20px;
+	padding-bottom: 10%;
+	padding-top: 10%;
 }
-*/
 
 .bubble-right {
 	position: relative;
 	background: #fff99e;
 	border-radius: .4em;
-	height: 2.0em;
-	max-width: 40%;
+	height: 120%;
+	/* 
+	max-width: 40%; 
+	*/
 }
 
 .bubble-right:after {
@@ -60,8 +61,10 @@ ul{
 	position: relative;
 	background: #fff99e;
 	border-radius: .4em;
-	height: 2.0em;
-	max-width: 40%;
+	height: 120%;
+	/* 
+	max-width: 40%; 
+	*/
 }
 
 .bubble-left:after {
