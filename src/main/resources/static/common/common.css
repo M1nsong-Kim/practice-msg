@@ -7,6 +7,9 @@
 	flex-wrap: wrap; /* 한줄 공간 부족 -> 다음줄로
 	*/
 	flex-flow: column wrap;
+	padding-left: 10%;
+	padding-right: 10%;
+	background-color: #9bbbd4;
 }
 
 .chat{
@@ -18,13 +21,7 @@
 }
 
 .left{
-	
-}
-
-/* li 점, 여백 없애기 */
-ul{
-   list-style:none;
-   padding-left:0px;
+	margin-right: auto;
 }
 
 .box {
@@ -34,7 +31,7 @@ ul{
 
 .bubble-right {
 	position: relative;
-	background: #fff99e;
+	background: #fef01b;;
 	border-radius: .4em;
 	height: 120%;
 	/* 
@@ -49,17 +46,17 @@ ul{
 	top: 50%;
 	width: 0;
 	height: 0;
-	border: 25px solid transparent;
-	border-left-color: #fff99e;
+	border: 15px solid transparent;
+	border-left-color: #fef01b;
 	border-right: 0;
 	border-top: 0;
 	margin-top: -10px;
-	margin-right: -20px;
+	margin-right: -10px;
 }
 
 .bubble-left {
 	position: relative;
-	background: #fff99e;
+	background: #ffffff;
 	border-radius: .4em;
 	height: 120%;
 	/* 
@@ -74,12 +71,12 @@ ul{
 	top: 50%;
 	width: 0;
 	height: 0;
-	border: 25px solid transparent;
-	border-right-color: #fff99e;
+	border: 15px solid transparent;
+	border-right-color: #ffffff;
 	border-left: 0;
 	border-top: 0;
 	margin-top: -10px;
-	margin-left: -20px;
+	margin-left: -10px;
 }
 
 .text{
