@@ -13,12 +13,12 @@ $("#generator").keyup(function(e){
 
 function pressEnter(){
 	if (window.event.keyCode == 13) {	// 13: 엔터
- 		msgOnBoard();
+ 		msgOnTalk();
     }
 }
 
 // 입력한 메시지 창 화면에 띄우기
-function msgOnBoard(){
+function msgOnTalk(){
 	var msg = {
 		speaker: ''
 		, content: ''
@@ -59,10 +59,22 @@ function msgOnBoard(){
 	}
 	code += "</div>";
 	
-	console.log(code);
+	// console.log(code);
 	$('.container').append(code);
 	
 	// 다 하고 text창 비우기
+	$('#content').val('');
+}
+
+function msgOnGame(){
+	var msg = {
+		place: ''
+		, speaker: ''
+		, content: ''
+		, time: ''
+	};
+	
+	$('.container').append(code);
 	$('#content').val('');
 }
 
