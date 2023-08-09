@@ -12,6 +12,11 @@
 	background-color: #9bbbd4;
 }
 
+.game-room {
+	background-color: #000000 !important;
+	opacity: 80%;
+}
+
 .chat{
 	display: flex;
 }
@@ -82,4 +87,25 @@
 .text{
 	vertical-align: middle;
 	margin: 0.5em;
+}
+
+.text-all{
+	color: #FFFFFF;
+}
+
+.text-party{
+	color: #FF66FF;
+}
+
+.text-guild{
+	color: #33FFFF;
+}
+
+.text-union{
+	color: #00FF00;
+}
+
+.text-megaphone{
+	color: #FF00FF;
+	background-color: #FFCCFF;
 }

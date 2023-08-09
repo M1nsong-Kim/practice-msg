@@ -2,22 +2,17 @@ var msgs = [];	// 객체 배열
 var timeArr = [];
 var time = { speaker: '', time: '' };	// 화자 넣는 이유: 같은 시간에 동일 화자는 맨 마지막 메시지만 시간 표시 
 
-/*
-// 제이쿼리 import한 상태에서도 $ is not a function 오류
-$("#generator").keyup(function(e){
-	if(e.keyCode == 13){
-		msgOnBoard();
-	} 
-});
-*/
-
-function pressEnter(){
+function pressEnter(e){
 	if (window.event.keyCode == 13) {	// 13: 엔터
- 		msgOnTalk();
+ 		if($(e).attr('class').indexOf('talk') != -1){			 
+	 		msgOnTalk();
+		 }else if($(e).attr('class').indexOf('game') != -1){
+			 msgOnGame();
+		 }
     }
 }
 
-// 입력한 메시지 창 화면에 띄우기
+// 입력한 메시지 창 화면에 띄우기)
 function msgOnTalk(){
 	var msg = {
 		speaker: ''
@@ -73,6 +68,31 @@ function msgOnGame(){
 		, content: ''
 		, time: ''
 	};
+	var place = ['all', 'party', 'guild', 'union', 'megaphone'];
+	var place_korean = ['전체', '파티', '길드', '연합', '확성기'];
+	var current_place = -1;
+	
+	msg.speaker = $(":input:radio[name=speaker]:checked").val();
+	msg.content = $('#content').val();
+	
+	for(let i = 0; i < place.length; i++){
+		if($('#place').val() == place[i]){
+			current_place = i;
+			msg.place = place[current_place];
+			break;
+		}
+	}
+	
+	console.log($('#place').val());
+	console.log(msg.place);
+	console.log(msg.content);
+	
+	var code = code = "<div class='text-"+msg.place+"'>"
+	if(current_place != 4){	
+		code += "[" + place_korean[current_place] + "]";
+	}
+	code += msg.speaker + ": " + msg.content
+		 + "</div>";
 	
 	$('.container').append(code);
 	$('#content').val('');

@@ -16,18 +16,18 @@
 	
 	<br>
 	<!-- 대화창 -->
-	<div class="container">
+	<div class="container game-room">
 		
 	</div>
 
 	<!-- 외치는 곳 -->	
 	<div>
-		<select>
-			<option id="all">전체</option>
-			<option id="party">파티</option>
-			<option id="guild">길드</option>
-			<option id="union">연합</option>
-			<option id="megaphone">확성기</option>
+		<select id="place">
+			<option value="all">전체</option>
+			<option value="party">파티</option>
+			<option value="guild">길드</option>
+			<option value="union">연합</option>
+			<option value="megaphone">확성기</option>
 		</select>
 	</div>
 	
@@ -41,11 +41,8 @@
 	</div>
 	
 	<div>
-		<input type="text" name="content" id="content" onkeyup="pressEnter();">
+		<input type="text" name="content" id="content" class="game" onkeyup="pressEnter(this);">
 		<button type="button" onclick="msgOnGame();">입력</button>
-	</div>
-	<div>
-		<button type="button"  onclick="popup_inNout();">입/퇴장 메시지</button>
 	</div>
 	<div>
 		<button type="submit" id="generator" onclick="popup_imgDownload();">생성</button>
