@@ -89,7 +89,7 @@ function msgOnGame(){
 	
 	var code = code = "<div class='text-"+msg.place+"'>"
 	if(current_place != 4){	
-		code += "[" + place_korean[current_place] + "]";
+		code += "[" + place_korean[current_place] + "] ";
 	}
 	code += msg.speaker + ": " + msg.content
 		 + "</div>";
