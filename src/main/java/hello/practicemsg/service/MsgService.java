@@ -1,5 +1,11 @@
 package hello.practicemsg.service;
 
-public class MsgService {
+import org.springframework.stereotype.Service;
 
+@Service
+public class MsgService {
+	
+	public String insertChat() {
+		return "";
+	}
 }
