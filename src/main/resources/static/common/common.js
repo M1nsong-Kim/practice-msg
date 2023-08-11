@@ -93,6 +93,16 @@ function msgOnGame(){
 	}
 	code += msg.speaker + ": " + msg.content
 		 + "</div>";
+		 
+	// DB 삽입
+	$.ajax({
+		url: '/insertChat'
+		, method: 'POST'
+		, async: true
+		, success: function(data) {
+			
+		}
+	});
 	
 	$('.container').append(code);
 	$('#content').val('');
