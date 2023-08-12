@@ -1,7 +1,7 @@
 package hello.practicemsg.repository;
 
+import hello.practicemsg.domain.Chat;
+
 public interface MsgRepository {
-	public static String insertChat() {
-		return "";
-	}
+	Chat insertChat(Chat chat);
 }
