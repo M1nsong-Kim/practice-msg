@@ -1,15 +1,17 @@
 package hello.practicemsg.service;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import hello.practicemsg.domain.Chat;
 import hello.practicemsg.repository.MsgRepository;
 
 // @Service
+@Transactional
 public class MsgService {
 	
-	final private MsgRepository msgRepository = new MsgRepository();
+	final private MsgRepository msgRepository;
 	
 	@Autowired
 	public MsgService(MsgRepository msgRepository) {

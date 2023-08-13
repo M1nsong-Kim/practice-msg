@@ -1,27 +1,33 @@
 package hello.practicemsg.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity		// JPA를 사용하긴 위한 ORM
 public class Chat {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)	// PK, DB가 알아서 생성(identity)
 	private int idx;
 	
+	@Column(name = "use_no")
 	private int useNo;
 
 	private int group;
 	
+	@Column(name = "from_name")
 	private String fromName;
 	
+	@Column(name = "to_name")
 	private String toName;
 	
 	private String content;
 	
+	@Column(name = "is_read")
 	private boolean isRead;
 	
+	@Column(name = "create_date")
 	private String createDate;
 
 	public int getIdx() {
