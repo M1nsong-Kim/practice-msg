@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import hello.practicemsg.domain.Chat;
 import hello.practicemsg.service.MsgService;
 
 @Controller
@@ -30,8 +31,10 @@ public class MsgController {
 	
 	// 메시지 DB 삽입
 	@PostMapping("insertChat")
-	public String insertChat() {
-		return "";
+	public int insertChat(Chat chat) {
+		int count = service.insertChat(chat);
+		System.out.println("MsgController param :: " + chat + ", count : " + count);	// 디버깅(추후수정)
+		return count;
 	}
 	
 	@GetMapping("generator/talk")

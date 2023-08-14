@@ -93,19 +93,24 @@ function msgOnGame(){
 	}
 	code += msg.speaker + ": " + msg.content
 		 + "</div>";
-		 
-	// DB 삽입
+		 	
+	$('.container').append(code);
+	$('#content').val('');
+	
+	// DB 삽입 (컬럼 정비 후 다시 작성 필요)
 	$.ajax({
 		url: '/insertChat'
 		, method: 'POST'
-		, async: true
+		, async: true	// 비동기
+		, data: {
+			fromName: msg.speaker
+			, content: msg.content
+			, createDate: '2023-08-14'
+		}
 		, success: function(data) {
-			
+			alert('success : ' + data);
 		}
 	});
-	
-	$('.container').append(code);
-	$('#content').val('');
 }
 
 // 상대방 추가
