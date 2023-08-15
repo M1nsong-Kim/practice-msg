@@ -66,7 +66,6 @@ function msgOnGame(){
 		place: ''
 		, speaker: ''
 		, content: ''
-		, time: ''
 	};
 	var place = ['all', 'party', 'guild', 'union', 'megaphone'];
 	var place_korean = ['전체', '파티', '길드', '연합', '확성기'];
@@ -102,13 +101,17 @@ function msgOnGame(){
 		url: '/insertChat'
 		, method: 'POST'
 		, async: true	// 비동기
-		, data: {
-			fromName: msg.speaker
+		, data: { category: 'game'
+			, fromName: msg.speaker
 			, content: msg.content
-			, createDate: '2023-08-14'
+			, place: place_korean[current_place]
+			// , createDate: msg.time 작성 시간으로
 		}
 		, success: function(data) {
-			alert('success : ' + data);
+			// alert('success : ' + data);
+		}
+		, error: function(data){
+			alert('error : ' + data);
 		}
 	});
 }
