@@ -30,22 +30,13 @@
 		
 		<!-- 시간 -->
 		<input type="radio" checked>현재 시간
-		<input type="radio">
-		<select>
-			<option>당일</option>
-			<option>직접입력</option>
-			<!--  -->
-		</select>
-		<select>
-			<option>오전</option>
-			<option>오후</option>
-		</select>
+		<input type="radio" id="dfTime" onclick="differentTime()"> 직접 입력
 		<input type="number">시<input type="number">분
 		<input type="radio">이전 시간 유지
 	</div>
 	
 	<div>
-		<input type="text" name="content" id="content" class="talk" onkeyup="pressEnter();">
+		<input type="text" name="content" id="content" class="talk" onkeyup="pressEnter(this);">
 		<button type="button" onclick="msgOnTalk();">입력</button>
 	</div>
 	<div>

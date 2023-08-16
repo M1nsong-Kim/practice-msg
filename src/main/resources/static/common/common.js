@@ -12,6 +12,10 @@ function pressEnter(e){
     }
 }
 
+function differentTime(){
+	
+}
+
 // 입력한 메시지 창 화면에 띄우기)
 function msgOnTalk(){
 	var msg = {
@@ -22,7 +26,7 @@ function msgOnTalk(){
 	
 	msg.speaker = $(":input:radio[name=speaker]:checked").val();
 	msg.content = $('#content').val();	// msg.contect를 말풍선으로 감싸기
-	var msgBox = 'msgBox';	 // 각 메시지 박스 이름(혹시 몰라 변수로 선언)
+	// var msgBox = 'msgBox';	 // 각 메시지 박스 이름(혹시 몰라 변수로 선언)
 	
 	if(msg.content.trim() == ''){
 		alert('공백 입력 불가');
@@ -59,6 +63,26 @@ function msgOnTalk(){
 	
 	// 다 하고 text창 비우기
 	$('#content').val('');
+	
+	// DB 삽입
+	$.ajax({
+		url: '/insertChat'
+		, method: 'POST'
+		, async: true	// 비동기
+		, data: { category: 'talk'
+			, fromName: msg.speaker
+			// , toName: 
+			, content: msg.content
+			, createDate: msg.time
+			// , createDate: msg.time 작성 시간으로
+		}
+		, success: function(data) {
+			// alert('success : ' + data);
+		}
+		, error: function(data){
+			alert('error : ' + data);
+		}
+	});
 }
 
 function msgOnGame(){
@@ -96,7 +120,7 @@ function msgOnGame(){
 	$('.container').append(code);
 	$('#content').val('');
 	
-	// DB 삽입 (컬럼 정비 후 다시 작성 필요)
+	// DB 삽입
 	$.ajax({
 		url: '/insertChat'
 		, method: 'POST'
