@@ -28,11 +28,18 @@
 		<input type="radio" name="speaker" id="speaker#" value="#">#
 		<button type="button" onclick="popup_opponent();">+</button>
 		
+		<!-- 날짜 -->
+		<input type="radio" name="date" id="current_date" onclick="differentDT(this)" checked>오늘 날짜
+		<input type="radio" name="date" id="date" onclick="differentDT(this)"> 직접 입력
+		<span id="df_date"></span>
+		
 		<!-- 시간 -->
-		<input type="radio" checked>현재 시간
-		<input type="radio" id="dfTime" onclick="differentTime()"> 직접 입력
-		<input type="number">시<input type="number">분
+		<input type="radio" name="time" id="current_time" onclick="differentDT(this)" checked>현재 시간
+		<input type="radio" name="time" id="time" onclick="differentDT(this)"> 직접 입력
+		<span id="df_time"></span>
+		<!-- 
 		<input type="radio">이전 시간 유지
+		 -->
 	</div>
 	
 	<div>

@@ -12,8 +12,33 @@ function pressEnter(e){
     }
 }
 
-function differentTime(){
+function differentDT(e){
+	var arr = ['date', 'time'];
+	var text = "";
 	
+	for(let i = 0; i < arr.length; i++){
+		var form = ['year', 'month', 'day', '년', '월', '일'];
+		if(i == 1){
+			form[0] = 'hour';
+			form[1] = 'min';
+			form[3] = '시';
+			form[4] = '분';
+		}
+		
+		if($(e).attr('id') == arr[i]){	// 직접 입력
+			$('#df_'+arr[i]).html('');	// 비우기
+			text += "<input type='number' id='" + form[0] + "'>" + form[3]
+				 + "<input type='number' id='" + form[1] + "'>" + form[4]
+			if(i == 0){				
+				text += "<input type='number' id='" + form[2] + "'>" + form[5];
+			}
+			$('#df_'+arr[i]).append(text);
+			break;
+		}else if($(e).attr('id') == 'current_' + arr[i]){	// 현재 기준
+			$('#df_'+arr[i]).html('');	// 비우기
+			break;
+		}
+	}
 }
 
 // 입력한 메시지 창 화면에 띄우기)
@@ -26,6 +51,7 @@ function msgOnTalk(){
 	
 	msg.speaker = $(":input:radio[name=speaker]:checked").val();
 	msg.content = $('#content').val();	// msg.contect를 말풍선으로 감싸기
+	// msg.time
 	// var msgBox = 'msgBox';	 // 각 메시지 박스 이름(혹시 몰라 변수로 선언)
 	
 	if(msg.content.trim() == ''){
