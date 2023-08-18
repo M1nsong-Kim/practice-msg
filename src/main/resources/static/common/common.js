@@ -18,7 +18,7 @@ function differentDT(e){
 	
 	for(let i = 0; i < arr.length; i++){
 		var form = ['year', 'month', 'day', '년', '월', '일'];
-		if(i == 1){
+		if(i == 1){	// 시간: 오전 오후 고민 ☆★☆
 			form[0] = 'hour';
 			form[1] = 'min';
 			form[3] = '시';
@@ -51,7 +51,8 @@ function msgOnTalk(){
 	
 	msg.speaker = $(":input:radio[name=speaker]:checked").val();
 	msg.content = $('#content').val();	// msg.contect를 말풍선으로 감싸기
-	// msg.time
+	msg.time = $('#year').val() + "-" + $('#month').val()<10?'0'+$('#month').val():$('#month').val() + "-" + $('#day').val()<10?'0'+$('#day').val():$('#day').val() + " "
+			 + $('#hour').val() + ":" + $('#min').val() + ":00";
 	// var msgBox = 'msgBox';	 // 각 메시지 박스 이름(혹시 몰라 변수로 선언)
 	
 	if(msg.content.trim() == ''){
@@ -70,7 +71,7 @@ function msgOnTalk(){
 	if(msg.speaker == 0){	
 		// 나 -> 오른쪽
 		code += "chat right'>"
-			 + msg.time + " "
+			 + msg.time.substr(11) + " "
 			 + "<div class='box'> <div class='bubble-right'> <span class='text'>" + msg.content + "</span> </div> </div>";
 			 
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
@@ -78,7 +79,7 @@ function msgOnTalk(){
 		// 상대 -> 왼쪽
 		code += "chat left'>"
 			 + "<div class='box'> <div class='bubble-left'> <span class='text'>" + msg.content + "</span> </div> </div>"
-			 + " " + msg.time;
+			 + " " + msg.time.substr(11);
 		
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}
@@ -155,7 +156,7 @@ function msgOnGame(){
 			, fromName: msg.speaker
 			, content: msg.content
 			, place: place_korean[current_place]
-			// , createDate: msg.time 작성 시간으로
+			, createDate: msg.time	// 초 안 넣어도 문제 없을까?
 		}
 		, success: function(data) {
 			// alert('success : ' + data);
