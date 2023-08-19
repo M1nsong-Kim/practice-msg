@@ -49,16 +49,29 @@ function msgOnTalk(){
 		, time: ''
 	};
 	
+	var month = $('#month').val()<10?'0'+$('#month').val():$('#month').val();
+	var day = $('#day').val()<10?'0'+$('#day').val():$('#day').val();
+	var hour = $('#hour').val();
+	var ampm = '';
+	if(hour > 12){
+		hour = '0'+($('#hour').val()-12);
+	}else if(hour <= 12){
+		hour = $('#hour').val()<10?'0'+$('#hour').val():$('#hour').val();
+	}
+	var min = $('#min').val()<10?'0'+$('#min').val():$('#min').val();
+	
 	msg.speaker = $(":input:radio[name=speaker]:checked").val();
 	msg.content = $('#content').val();	// msg.contect를 말풍선으로 감싸기
-	msg.time = $('#year').val() + "-" + $('#month').val()<10?'0'+$('#month').val():$('#month').val() + "-" + $('#day').val()<10?'0'+$('#day').val():$('#day').val() + " "
-			 + $('#hour').val() + ":" + $('#min').val() + ":00";
+	msg.time = $('#year').val() + "-" + month + "-" + day + " "
+			 + hour + ":" + min;
 	// var msgBox = 'msgBox';	 // 각 메시지 박스 이름(혹시 몰라 변수로 선언)
 	
 	if(msg.content.trim() == ''){
 		alert('공백 입력 불가');
 		return;
 	}
+	
+	console.log(msg.time);
 	
 	var code = "<div " + " class='";
 	/*
@@ -70,20 +83,21 @@ function msgOnTalk(){
 	
 	if(msg.speaker == 0){	
 		// 나 -> 오른쪽
-		code += "chat right'>"
-			 + msg.time.substr(11) + " "
+		code += "chat right'>" + "<div class='chat-space'"
+			 + "<span class='time'>" + msg.time.substr(11) + "<span>"
 			 + "<div class='box'> <div class='bubble-right'> <span class='text'>" + msg.content + "</span> </div> </div>";
 			 
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}else{
 		// 상대 -> 왼쪽
-		code += "chat left'>"
+		code += "chat left'>" + "<div class='chat-space'"
+			 // + "<span>" + msg.speaker + "<span>"	// 상대 저장명
 			 + "<div class='box'> <div class='bubble-left'> <span class='text'>" + msg.content + "</span> </div> </div>"
-			 + " " + msg.time.substr(11);
+			 + "<span class='time'>" + msg.time.substr(11) + "<span>";
 		
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}
-	code += "</div>";
+	code += "</div> </div>";
 	
 	// console.log(code);
 	$('.container').append(code);
@@ -118,8 +132,8 @@ function msgOnGame(){
 		, speaker: ''
 		, content: ''
 	};
-	var place = ['all', 'party', 'guild', 'union', 'megaphone'];
-	var place_korean = ['전체', '파티', '길드', '연합', '확성기'];
+	var place = ['all', 'party', 'guild', 'union', 'megaphone', 'system'];
+	var place_korean = ['전체', '파티', '길드', '연합', '확성기', '안내'];
 	var current_place = -1;
 	
 	msg.speaker = $(":input:radio[name=speaker]:checked").val();
