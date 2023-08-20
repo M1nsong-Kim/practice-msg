@@ -73,7 +73,7 @@ function msgOnTalk(){
 	
 	console.log(msg.time);
 	
-	var code = "<div " + " class='";
+	var code = "";
 	/*
 	var code = document.createElement('li');
 	code.setAttribute("id", msgBox);
@@ -83,15 +83,15 @@ function msgOnTalk(){
 	
 	if(msg.speaker == 0){	
 		// 나 -> 오른쪽
-		code += "chat right'>" + "<div class='chat-space'"
-			 + "<span class='time'>" + msg.time.substr(11) + "<span>"
+		code += "<div class='chat right'>" + "<div class='chat-space'"
+			 + "<span class='time'>" + msg.time.substr(11) + "</span>"
 			 + "<div class='box'> <div class='bubble-right'> <span class='text'>" + msg.content + "</span> </div> </div>";
 			 
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}else{
 		// 상대 -> 왼쪽
-		code += "chat left'>" + "<div class='chat-space'"
-			 // + "<span>" + msg.speaker + "<span>"	// 상대 저장명
+		code += "<span class='opponent'>" + msg.speaker + "</span>"	// 상대 저장명
+			 + "<div class='chat left'>" + "<div class='chat-space'"
 			 + "<div class='box'> <div class='bubble-left'> <span class='text'>" + msg.content + "</span> </div> </div>"
 			 + "<span class='time'>" + msg.time.substr(11) + "<span>";
 		
