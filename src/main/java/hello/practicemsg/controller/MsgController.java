@@ -35,6 +35,12 @@ public class MsgController {
 	@PostMapping("insertChat")
 	@ResponseBody	// java.lang.IllegalArgumentException: Unknown return value type: java.lang.Integer 해결
 	public int insertChat(Chat chat) {
+		/*
+		// 어차피 js에서도 시간 표출해야 함
+		if(chat.getCreateDate().equals("")) {
+			chat.setCreateDate(null);
+		}
+		 */
 		int count = service.insertChat(chat);
 		System.out.println("MsgController param :: " + chat + ", count : " + count);	// 디버깅(추후수정)
 		return count;

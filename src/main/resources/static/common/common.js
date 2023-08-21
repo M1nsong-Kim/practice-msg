@@ -55,15 +55,33 @@ function msgOnTalk(){
 	var ampm = '';
 	if(hour > 12){
 		hour = '0'+($('#hour').val()-12);
+		ampm = '오후';
 	}else if(hour <= 12){
 		hour = $('#hour').val()<10?'0'+$('#hour').val():$('#hour').val();
+		ampm = '오전';
 	}
 	var min = $('#min').val()<10?'0'+$('#min').val():$('#min').val();
 	
 	msg.speaker = $(":input:radio[name=speaker]:checked").val();
 	msg.content = $('#content').val();	// msg.contect를 말풍선으로 감싸기
-	msg.time = $('#year').val() + "-" + month + "-" + day + " "
-			 + hour + ":" + min;
+	if($('#year').val() == undefined){
+		var date = new Date();
+		let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
+
+        month = month >= 10 ? month : '0' + month;
+        day = day >= 10 ? day : '0' + day;
+        hour = hour >= 10 ? hour : '0' + hour;
+        minute = minute >= 10 ? minute : '0' + minute;
+
+		msg.time = date.getFullYear() + '-' + month + '-' + day + ' ' + hour + ':' + minute;
+	}else {		
+		msg.time = $('#year').val() + "-" + month + "-" + day + " "
+				 + hour + ":" + min;
+	}
 	// var msgBox = 'msgBox';	 // 각 메시지 박스 이름(혹시 몰라 변수로 선언)
 	
 	if(msg.content.trim() == ''){
