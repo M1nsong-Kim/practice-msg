@@ -49,60 +49,51 @@ function msgOnTalk(){
 		, time: ''
 	};
 	
-	var month = $('#month').val()<10?'0'+$('#month').val():$('#month').val();
-	var day = $('#day').val()<10?'0'+$('#day').val():$('#day').val();
-	var hour = $('#hour').val();
-	var ampm = '';
+	var date = new Date();
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	var day = date.getDate();
+	var hour = date.getHours();
+	var min = date.getMinutes();
+	// var getCurrentDate = false;
+	if($('#year').val() != undefined){
+		year = $('#year').val();
+		month = $('#month').val();
+		day = $('#day').val();
+	}else if($('#hour').val() != undefined){
+		hour = $('#hour').val();
+		min = $('#min').val();
+	}
 	if(hour > 12){
-		hour = '0'+($('#hour').val()-12);
+		hour -= 12;
 		ampm = '오후';
-	}else if(hour <= 12){
-		hour = $('#hour').val()<10?'0'+$('#hour').val():$('#hour').val();
+	}else if(hour == 12){
+		ampm = '오후';
+	}else if(hour < 12){
 		ampm = '오전';
 	}
-	var min = $('#min').val()<10?'0'+$('#min').val():$('#min').val();
-	
+	month = month<10?'0'+month:month;
+	day = day<10?'0'+day:day;
+	hour = hour<10?'0'+hour:hour;
+	min = min<10?'0'+min:min;
+
+
 	msg.speaker = $(":input:radio[name=speaker]:checked").val();
 	msg.content = $('#content').val();	// msg.contect를 말풍선으로 감싸기
-	if($('#year').val() == undefined){
-		var date = new Date();
-		let month = date.getMonth() + 1;
-        let day = date.getDate();
-        let hour = date.getHours();
-        let minute = date.getMinutes();
-        let second = date.getSeconds();
-
-        month = month >= 10 ? month : '0' + month;
-        day = day >= 10 ? day : '0' + day;
-        hour = hour >= 10 ? hour : '0' + hour;
-        minute = minute >= 10 ? minute : '0' + minute;
-
-		msg.time = date.getFullYear() + '-' + month + '-' + day + ' ' + hour + ':' + minute;
-	}else {		
-		msg.time = $('#year').val() + "-" + month + "-" + day + " "
-				 + hour + ":" + min;
-	}
+	msg.time = year + '-' + month + '-' + day + ' ' + hour + ':' + min;
 	// var msgBox = 'msgBox';	 // 각 메시지 박스 이름(혹시 몰라 변수로 선언)
 	
 	if(msg.content.trim() == ''){
 		alert('공백 입력 불가');
 		return;
 	}
-	
-	console.log(msg.time);
-	
+
 	var code = "";
-	/*
-	var code = document.createElement('li');
-	code.setAttribute("id", msgBox);
-	code.setAttribute("name", msgBox);
-	*/
-	
-	
+
 	if(msg.speaker == 0){	
 		// 나 -> 오른쪽
 		code += "<div class='chat right'>" + "<div class='chat-space'"
-			 + "<span class='time'>" + msg.time.substr(11) + "</span>"
+			 + "<span class='time'>" + ampm + ' ' + msg.time.substr(11) + "</span>"
 			 + "<div class='box'> <div class='bubble-right'> <span class='text'>" + msg.content + "</span> </div> </div>";
 			 
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
@@ -111,7 +102,7 @@ function msgOnTalk(){
 		code += "<span class='opponent'>" + msg.speaker + "</span>"	// 상대 저장명
 			 + "<div class='chat left'>" + "<div class='chat-space'"
 			 + "<div class='box'> <div class='bubble-left'> <span class='text'>" + msg.content + "</span> </div> </div>"
-			 + "<span class='time'>" + msg.time.substr(11) + "<span>";
+			 + "<span class='time'>" + ampm + ' ' + msg.time.substr(11) + "<span>";
 		
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}
