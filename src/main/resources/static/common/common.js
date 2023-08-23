@@ -133,6 +133,9 @@ function msgOnTalk(){
 			alert('error : ' + data);
 		}
 	});
+	
+	// 객체에 추가 (말풍선 꼬리, 시간 등 처리 위함) - 추후 분류별 msgs 만들어야 할지도
+	msgs.push(msg);
 }
 
 function msgOnGame(){
