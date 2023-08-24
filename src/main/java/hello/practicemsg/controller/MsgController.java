@@ -27,8 +27,7 @@ public class MsgController {
 	
 	@PostMapping("popupOpponent")
 	public String popupOpponent() {
-		return "popup_opponent"
-				+ "";
+		return "popup_opponent";
 	}
 	
 	// 메시지 DB 삽입
