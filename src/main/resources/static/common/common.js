@@ -1,7 +1,12 @@
-var talk_msgs = [];	// 객체 배열
+var talk_msgs = [{
+		speaker: ''
+		, content: ''
+		, time: ''
+	}];	// 객체 배열
 var game_msg = [];
-var timeArr = [];
-var time = { speaker: '', time: '' };	// 화자 넣는 이유: 같은 시간에 동일 화자는 맨 마지막 메시지만 시간 표시 
+// var timeArr = [];
+// var time = { speaker: '', time: '' };	// 화자 넣는 이유: 같은 시간에 동일 화자는 맨 마지막 메시지만 시간 표시 
+var idx = 0;
 
 function pressEnter(e){
 	if (window.event.keyCode == 13) {	// 13: 엔터
@@ -50,6 +55,8 @@ function msgOnTalk(){
 		, time: ''
 	};
 	
+	idx = talk_msgs.length;
+	
 	var date = new Date();
 	var year = date.getFullYear();
 	var month = date.getMonth() + 1;
@@ -90,11 +97,17 @@ function msgOnTalk(){
 	}
 
 	var code = "";
+	var time = ampm + ' ' +msg.time.substr(11);
+	if(idx == 0 || talk_msgs[idx-1].speaker != msg.speaker){
+		console.log('시간 적기');
+	}else{
+		talk_msgs[idx-1].time == msg.time ? time = ' ' : time;
+	}
 
 	if(msg.speaker == 0){	
 		// 나 -> 오른쪽
 		code += "<div class='chat right'>" + "<div class='chat-space'"
-			 + "<span class='time'>" + ampm + ' ' + msg.time.substr(11) + "</span>"
+			 + "<span class='time'>" + time + "</span>"
 			 + "<div class='box'> <div class='bubble-right'> <span class='text'>" + msg.content + "</span> </div> </div>";
 			 
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
@@ -103,7 +116,7 @@ function msgOnTalk(){
 		code += "<span class='opponent'>" + msg.speaker + "</span>"	// 상대 저장명
 			 + "<div class='chat left'>" + "<div class='chat-space'"
 			 + "<div class='box'> <div class='bubble-left'> <span class='text'>" + msg.content + "</span> </div> </div>"
-			 + "<span class='time'>" + ampm + ' ' + msg.time.substr(11) + "<span>";
+			 + "<span class='time'>" + time + "<span>";
 		
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}
