@@ -1,4 +1,5 @@
-var msgs = [];	// 객체 배열
+var talk_msgs = [];	// 객체 배열
+var game_msg = [];
 var timeArr = [];
 var time = { speaker: '', time: '' };	// 화자 넣는 이유: 같은 시간에 동일 화자는 맨 마지막 메시지만 시간 표시 
 
@@ -113,6 +114,9 @@ function msgOnTalk(){
 	
 	// 다 하고 text창 비우기
 	$('#content').val('');
+
+	// 객체에 추가 (말풍선 꼬리, 시간 등 처리 위함) / DB 삽입보다 우선
+	talk_msgs.push(msg);
 	
 	// DB 삽입
 	$.ajax({
@@ -134,8 +138,6 @@ function msgOnTalk(){
 		}
 	});
 	
-	// 객체에 추가 (말풍선 꼬리, 시간 등 처리 위함) - 추후 분류별 msgs 만들어야 할지도
-	msgs.push(msg);
 }
 
 function msgOnGame(){
@@ -172,6 +174,8 @@ function msgOnGame(){
 		 	
 	$('.container').append(code);
 	$('#content').val('');
+
+	game_msgs.push(msg);	// DB 삽입보다 우선
 	
 	// DB 삽입
 	$.ajax({
@@ -191,6 +195,7 @@ function msgOnGame(){
 			alert('error : ' + data);
 		}
 	});
+	
 }
 
 // 상대방 추가
