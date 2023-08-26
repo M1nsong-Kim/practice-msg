@@ -218,7 +218,7 @@ function popup_opponent(){
 
 // 입/퇴장 메시지
 function popup_inNout(){
-	var popup = window.open('/popupIn&out', 'popup_inNout', 'width=700px,height=800px,scrollbars=yes');
+	var popup = window.open('/popupInNOut', 'popup_inNout', 'width=700px,height=800px,scrollbars=yes');
 }
 
 // 저장 전 이미지 확인 팝업

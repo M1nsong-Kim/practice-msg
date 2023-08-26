@@ -15,17 +15,17 @@ public class MsgController {
 	@Autowired
 	private MsgService service;
 	
-	@PostMapping("popupIn&out")
+	@GetMapping("popupInNOut")
 	public String popupInNout() {
-		return "popup_in&out";
+		return "popup_inNout";
 	}
 	
-	@PostMapping("popupImgDownload")
+	@GetMapping("popupImgDownload")
 	public String popupImgDownload() {
 		return "popup_imgDownload";
 	}
 	
-	@PostMapping("popupOpponent")
+	@GetMapping("popupOpponent")
 	public String popupOpponent() {
 		return "popup_opponent";
 	}
