@@ -213,7 +213,8 @@ function msgOnGame(){
 
 // 상대방 추가
 function popup_opponent(){
-	var popup = window.open('/popupOpponent', 'popup_opponent', 'width=700px,height=800px,scrollbars=yes');
+	var popup = window.open('/popupOpponent', 'popup_opponent', 'width=700px,height=800px,scrollbars=yes,location=no,toolbars=no,status=no');
+	// option 안 먹는 거 같음
 }
 
 // 입/퇴장 메시지

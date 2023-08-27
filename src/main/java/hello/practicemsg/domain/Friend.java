@@ -8,9 +8,11 @@ public class Friend {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private int idx;
 	
-	private int use_no;
+	private int useNo;
 	
 	private String name;
+	
+	private int beHere;
 
 	public int getIdx() {
 		return idx;
@@ -20,12 +22,12 @@ public class Friend {
 		this.idx = idx;
 	}
 
-	public int getUse_no() {
-		return use_no;
+	public int getUseNo() {
+		return useNo;
 	}
 
-	public void setUse_no(int use_no) {
-		this.use_no = use_no;
+	public void setUseNo(int useNo) {
+		this.useNo = useNo;
 	}
 
 	public String getName() {
@@ -34,5 +36,13 @@ public class Friend {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public int getBeHere() {
+		return beHere;
+	}
+
+	public void setBeHere(int beHere) {
+		this.beHere = beHere;
 	}
 }
