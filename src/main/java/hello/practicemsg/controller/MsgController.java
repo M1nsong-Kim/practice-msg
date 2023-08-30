@@ -1,12 +1,16 @@
 package hello.practicemsg.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import hello.practicemsg.domain.Chat;
+import hello.practicemsg.domain.Friend;
 import hello.practicemsg.service.MsgService;
 
 @Controller
@@ -26,7 +30,10 @@ public class MsgController {
 	}
 	
 	@GetMapping("popupOpponent")
-	public String popupOpponent() {
+	public String popupOpponent(Model model) {
+		// 상대 목록
+		List<Friend> friendList = service.selectFriendList();
+		model.addAttribute("friendList", friendList);
 		return "popup_opponent";
 	}
 	
