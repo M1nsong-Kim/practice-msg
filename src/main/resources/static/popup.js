@@ -1,5 +1,9 @@
+getOpponentList();
+
+
 function getOpponentList(){
 	var code = "";
+	console.log("${friendList}");
 	$('.opponentList').append(code);
 }
 

@@ -213,16 +213,16 @@ function msgOnGame(){
 
 // 상대방 추가
 function popup_opponent(){
-	var popup = window.open('/popupOpponent', 'popup_opponent', 'width=700px,height=800px,scrollbars=yes,location=no,toolbars=no,status=no');
+	window.open('/popupOpponent', 'popup_opponent', 'width=700px,height=800px,scrollbars=yes,location=no,toolbars=no,status=no');
 	// option 안 먹는 거 같음
 }
 
 // 입/퇴장 메시지
 function popup_inNout(){
-	var popup = window.open('/popupInNOut', 'popup_inNout', 'width=700px,height=800px,scrollbars=yes');
+	window.open('/popupInNOut', 'popup_inNout', 'width=700px,height=800px,scrollbars=yes');
 }
 
 // 저장 전 이미지 확인 팝업
 function popup_imgDownload(){
-	var popup = window.open('/popupImgDownload', 'popup_imgDownload', 'width=700px,height=800px,scrollbars=yes');
+	window.open('/popupImgDownload', 'popup_imgDownload', 'width=700px,height=800px,scrollbars=yes');
 }

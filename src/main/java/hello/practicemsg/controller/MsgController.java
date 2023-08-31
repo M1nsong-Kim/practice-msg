@@ -34,6 +34,7 @@ public class MsgController {
 		// 상대 목록
 		List<Friend> friendList = service.selectFriendList();
 		model.addAttribute("friendList", friendList);
+		System.out.println("MsgController friendList param :: " + friendList);	// 디버깅(추후수정)
 		return "popup_opponent";
 	}
 	

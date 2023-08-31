@@ -1,9 +1,11 @@
 package hello.practicemsg.domain;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity		// JPA를 사용하긴 위한 ORM
 public class Friend {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private int idx;
