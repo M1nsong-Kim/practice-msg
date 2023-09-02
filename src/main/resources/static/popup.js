@@ -1,10 +1,10 @@
-getOpponentList();
+getFriendList();
 
 
-function getOpponentList(){
+function getFriendList(){
 	var code = "";
 	console.log("${friendList}");
-	$('.opponentList').append(code);
+	$('.friendList').append(code);
 }
 
 function getInNOutMsg(e){

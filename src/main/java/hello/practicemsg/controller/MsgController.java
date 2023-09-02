@@ -29,13 +29,13 @@ public class MsgController {
 		return "popup_imgDownload";
 	}
 	
-	@GetMapping("popupOpponent")
-	public String popupOpponent(Model model) {
+	@GetMapping("popupFriend")
+	public String popupFriend(Model model) {
 		// 상대 목록
 		List<Friend> friendList = service.selectFriendList();
 		model.addAttribute("friendList", friendList);
 		System.out.println("MsgController friendList param :: " + friendList);	// 디버깅(추후수정)
-		return "popup_opponent";
+		return "popup_friend";
 	}
 	
 	// 메시지 DB 삽입

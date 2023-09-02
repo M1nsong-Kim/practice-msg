@@ -113,7 +113,7 @@ function msgOnTalk(){
 		// 라디오 체크(설정 안 해도 그대로 유지됨)
 	}else{
 		// 상대 -> 왼쪽
-		code += "<span class='opponent'>" + msg.speaker + "</span>"	// 상대 저장명
+		code += "<span class='friend'>" + msg.speaker + "</span>"	// 상대 저장명
 			 + "<div class='chat left'>" + "<div class='chat-space'"
 			 + "<div class='box'> <div class='bubble-left'> <span class='text'>" + msg.content + "</span> </div> </div>"
 			 + "<span class='time'>" + time + "<span>";
@@ -212,8 +212,8 @@ function msgOnGame(){
 }
 
 // 상대방 추가
-function popup_opponent(){
-	window.open('/popupOpponent', 'popup_opponent', 'width=700px,height=800px,scrollbars=yes,location=no,toolbars=no,status=no');
+function popup_friend(){
+	window.open('/popupFriend', 'popup_friend', 'width=700px,height=800px,scrollbars=yes,location=no,toolbars=no,status=no');
 	// option 안 먹는 거 같음
 }
 
