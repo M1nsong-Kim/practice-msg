@@ -29,12 +29,18 @@ public class MsgController {
 		return "popup_imgDownload";
 	}
 	
-	@GetMapping("popupFriend")
-	public String popupFriend(Model model) {
+	@PostMapping("getFriendList")
+	@ResponseBody
+	public List<Friend> getFriendList(Model model) {
 		// 상대 목록
 		List<Friend> friendList = service.selectFriendList();
 		model.addAttribute("friendList", friendList);
-		System.out.println("MsgController friendList param :: " + friendList);	// 디버깅(추후수정)
+		// int count = friendList.size();
+		return friendList;
+	}
+	
+	@GetMapping("popupFriend")
+	public String popupFriend() {
 		return "popup_friend";
 	}
 	
