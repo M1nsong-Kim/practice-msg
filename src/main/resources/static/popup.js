@@ -18,9 +18,19 @@ function getFriendList(){
 			alert('error : ' + data);
 		}
 	});
+	console.log(code);
 	$('.friendList').append(code);	// 수정 필요
 }
 
 function getInNOutMsg(e){
-	console.log($(e).attr('name'));
+	var idx = $(e).attr('name');
+	if(idx == 2){	// 퇴장
+		// 퇴장은 한 명씩만
+		if($('input:checkbox').length != 1){
+		return;
+		};
+	}else{	// 입장
+		
+	}
+	return inOutMsg(user, idx);
 }

@@ -217,9 +217,21 @@ function popup_friend(){
 	// option 안 먹는 거 같음
 }
 
+var inOut = ['모름', '입장', '퇴장'];
+
 // 입/퇴장 메시지
 function popup_inNout(){
 	window.open('/popupInNOut', 'popup_inNout', 'width=700px,height=800px,scrollbars=yes');
+}
+
+function inOutMsg(user, idx){
+	var code = "";
+	if(idx == 1){	// 입장(초대한 사람 O)
+		code += "님이 " + "님을 초대하셨습니다.";
+	}else{			// 퇴장
+		code += user + "님이 " + inOut[idx] + "하셨습니다.";
+	}
+	$('.container').append(code);
 }
 
 // 저장 전 이미지 확인 팝업
