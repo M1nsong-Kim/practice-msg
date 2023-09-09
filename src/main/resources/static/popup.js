@@ -36,13 +36,18 @@ function exceptInviter(e){
 
 function getInNOutMsg(e){
 	var idx = $(e).attr('name');
+	var inviter = $('input:radio:checked').length;
+	var count = $('input:checkbox[name=friend]:checked').length;
 	if(idx == 2){	// 퇴장
 		// 퇴장은 한 명씩만
-		if($('input:checkbox[name=friend]:checked').length != 1){
-		return;
+		if(count != 1){
+			return;
 		};
 	}else{	// 입장
-		
+		// 초대자는 한 명씩만
+		if(inviter != 1){
+			return;
+		}
 	}
-	return inOutMsg(user, idx);
+	return inOutMsg(inviter, user, idx);
 }

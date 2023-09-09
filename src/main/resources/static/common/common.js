@@ -224,7 +224,7 @@ function popup_inNout(){
 	window.open('/popupInNOut', 'popup_inNout', 'width=700px,height=800px,scrollbars=yes');
 }
 
-function inOutMsg(user, idx){
+function inOutMsg(inviter, user, idx){
 	var code = "";
 	if(idx == 1){	// 입장(초대한 사람 O)
 		code += "님이 " + "님을 초대하셨습니다.";
