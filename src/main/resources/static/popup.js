@@ -13,7 +13,7 @@ function getFriendList(){
 			console.log(data);
 			for(let i = 0; i < data.length; i++){
 				// 수정 필요
-				code += "<input type='radio' id='" + data[i].name + "' onclick='exceptInviter(this)'>" + data[i].name;
+				code += "<input type='radio' name='friend' id='" + data[i].name + "' onclick='exceptInviter(this)'>" + data[i].name;
 				code2 += "<input type='checkbox' name='friend' value='" + data[i].name + "'>" + data[i].name;
 			}
 		}
@@ -21,6 +21,8 @@ function getFriendList(){
 			alert('error : ' + data);
 		}
 	});
+	console.log(code);
+	console.log(code2);
 	// 수정 필요
 	$('.friendList').append(code);
 	$('.friendList2').append(code2);	
@@ -38,6 +40,10 @@ function getInNOutMsg(e){
 	var idx = $(e).attr('name');
 	var inviter = $('input:radio:checked').length;
 	var count = $('input:checkbox[name=friend]:checked').length;
+	var user = $('input:checkbox[name=friend]:checked').val();
+	console.log(inviter);
+	console.log(count);
+	console.log(user);
 	if(idx == 2){	// 퇴장
 		// 퇴장은 한 명씩만
 		if(count != 1){

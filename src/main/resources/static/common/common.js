@@ -225,9 +225,10 @@ function popup_inNout(){
 }
 
 function inOutMsg(inviter, user, idx){
+	console.log('js 간 통신 : getInNOutMsg()에서 호출');
 	var code = "";
 	if(idx == 1){	// 입장(초대한 사람 O)
-		code += "님이 " + "님을 초대하셨습니다.";
+		code +=  inviter + "님이 " + "님을 초대하셨습니다.";
 	}else{			// 퇴장
 		code += user + "님이 " + inOut[idx] + "하셨습니다.";
 	}
