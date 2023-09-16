@@ -20,7 +20,9 @@ public class MsgController {
 	private MsgService service;
 	
 	@GetMapping("popupInNOut")
-	public String popupInNout() {
+	public String popupInNout(Model model) {
+		List<Friend> friendList = service.selectFriendList();
+		model.addAttribute("friendList", friendList);
 		return "popup_inNout";
 	}
 	

@@ -11,10 +11,12 @@
 </head>
 <body>
 	<!-- 초대자 -->
-	<div class="friendList">
+	<div class="friendList" th:each="friend : ${friendList}">
+		<input type='radio' name='friend' onclick='exceptInviter(this)' th:text="${friend?.name}">
 	</div>
 	<!-- 상대 목록 -->
-	<div class="friendList2">
+	<div class="friendList2" th:each="friend : ${friendList}">
+		<input type='checkbox' name='friend' th:text="${friend?.name}">
 	</div>
 	<button onclick="getInNOutMsg(this);" name="1">입장</button>
 	<button onclick="getInNOutMsg(this);" name="2">퇴장</button>
