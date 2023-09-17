@@ -19,6 +19,11 @@ public class MsgController {
 	@Autowired
 	private MsgService service;
 	
+	@GetMapping("fullText/fullText_game")
+	public String fullText_game() {
+		return "generator/fullText/fullText_game";
+	}
+	
 	@GetMapping("popupInNOut")
 	public String popupInNout(Model model) {
 		List<Friend> friendList = service.selectFriendList();
