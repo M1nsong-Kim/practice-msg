@@ -9,25 +9,24 @@ function generate_full_text_game(){
 	var place_korean = ['전체', '파티', '길드', '연합', '확성기', '안내'];
 	var current_place = -1;
 	var full_text = $('#full_text').val().split('\n');
-	var place = '';
+	var place_now = '';
 
 	for(let i = 0; i < full_text.length; i++){
 		var index_of_place = full_text[i].indexOf(']');
-		place = full_text[i].substring(1, index_of_place);
+		place_now = full_text[i].substring(1, index_of_place);
 		
 		for(let j = 0; j < place.length; j++){
-			if(place == place_korean[j]){	// 여기서 안 걸림
+			if(place_now == place_korean[j]){
 				current_place = j;
-				msg.place = place[current_place];	// msg.place 갱신 x
+				msg.place = place[current_place];
 				break;
 			}
 		}
 		
 		var code = code = "<div class='text-"+msg.place+"'>"
-		console.log('index_of_place : '+index_of_place);
-		console.log(msg.place);
-		console.log(full_text[i].substring(1, 3));	// 두글자일때 위랑 같아야 되는데 다르게 나옴 -> 확인 필요
-		console.log(code);
+		if(current_place != 4){	// 확성기 외
+			code += "[" + place_korean[current_place] + "] ";
+		}
 		$('.container').append(code);
 	}
 	

@@ -179,7 +179,7 @@ function msgOnGame(){
 	console.log(msg.content);
 	
 	var code = code = "<div class='text-"+msg.place+"'>"
-	if(current_place != 4){	
+	if(current_place != 4){	// 확성기 외
 		code += "[" + place_korean[current_place] + "] ";
 	}
 	code += msg.speaker + ": " + msg.content
@@ -188,7 +188,7 @@ function msgOnGame(){
 	$('.container').append(code);
 	$('#content').val('');
 
-	game_msgs.push(msg);	// DB 삽입보다 우선
+	game_msg.push(msg);	// DB 삽입보다 우선
 	
 	// DB 삽입
 	$.ajax({
