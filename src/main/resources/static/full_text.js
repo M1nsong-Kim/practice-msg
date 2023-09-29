@@ -18,16 +18,29 @@ function generate_full_text_game(){
 		for(let j = 0; j < place.length; j++){
 			if(place_now == place_korean[j]){
 				current_place = j;
-				msg.place = place[current_place];
 				break;
 			}
+			if(current_place = -1){	// 확성기
+				current_place = 4;
+			}
 		}
+
+		msg.place = place[current_place];
+		// msg.speaker = full_text[i].substring(index_of_place+1, full_text[i].indexOf(':')).trim();
+		msg.speaker = full_text[i].substring(full_text[i].indexOf(' ')+1, full_text[i].indexOf(':')).trim();
+		msg.content = full_text[i].substring(full_text[i].indexOf(':')+1).trim();
 		
 		var code = code = "<div class='text-"+msg.place+"'>"
 		if(current_place != 4){	// 확성기 외
-			code += "[" + place_korean[current_place] + "] ";
+			code += "[" + place_korean[current_place] + "] "
+				 +  msg.speaker + ": " + msg.content;
+		}else{
+			code += full_text[i];
 		}
+		 + "</div>";
+		 
 		$('.container').append(code);
+		$('.container').val('');
 	}
 	
 	/*
