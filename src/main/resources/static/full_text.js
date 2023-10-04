@@ -77,16 +77,14 @@ function generate_full_text_game(){
 }
 
 function full_download(){
-	/*
-    html2canvas($('#container')[0]).then(function(canvas) {
-      saveImg(canvas.toDataURL('image/jpg'), 'image.jpg');
-    });
-	*/
-	html2canvas($('#container').get(0)).then(function (canvas){
-		console.log(canvas);
-		// saveImg(canvas.toDataURL('image/jpg'), 'image.jpg');
-	});
+	// $(document).ready(function() {
+		html2canvas($('.game-room')[0]).then(function(canvas) {
+			console.log(canvas);
+    		saveImg(canvas.toDataURL('image/jpg'), 'image.jpg');
+		});
+	// });
 }
+
 
 function saveImg(dataURL, fileName) {
     var a = document.createElement('a');
