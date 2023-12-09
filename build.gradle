@@ -25,6 +25,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	// HTML parser: 이거 이용 혹은 js html2canvas 이용
 	implementation 'net.htmlparser.jericho:jericho-html:3.4'
+	// html 수정할 때 서버 재시작x
+	implementation 'org.springframework.boot:spring-boot-devtools'
 }
 
 tasks.named('test') {
