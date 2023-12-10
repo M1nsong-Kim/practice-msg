@@ -39,8 +39,8 @@ function generate_full_text_game(){
 		}
 		 + "</div>";
 		 
-		$('.container').append(code);
-		$('.container').val('');
+		$('.bg').append(code);
+		$('.bg').val('');
 	}
 	
 	/*

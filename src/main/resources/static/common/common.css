@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.container{
+.bg{
 	display: flex;
 	/*
 	flex-wrap: wrap; /* 한줄 공간 부족 -> 다음줄로

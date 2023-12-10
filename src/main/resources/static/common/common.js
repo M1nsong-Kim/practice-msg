@@ -123,7 +123,7 @@ function msgOnTalk(){
 	code += "</div> </div>";
 	
 	// console.log(code);
-	$('.container').append(code);
+	$('.bg').append(code);
 	
 	// 다 하고 text창 비우기
 	$('#content').val('');
@@ -185,7 +185,7 @@ function msgOnGame(){
 	code += msg.speaker + ": " + msg.content
 		 + "</div>";
 		 	
-	$('.container').append(code);
+	$('.bg').append(code);
 	$('#content').val('');
 
 	game_msg.push(msg);	// DB 삽입보다 우선
@@ -232,7 +232,7 @@ function inOutMsg(inviter, user, idx){
 	}else{			// 퇴장
 		code += user + "님이 " + inOut[idx] + "하셨습니다.";
 	}
-	$('.container').append(code);
+	$('.bg').append(code);
 }
 
 // 저장 전 이미지 확인 팝업
