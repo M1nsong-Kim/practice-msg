@@ -14,12 +14,14 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div>
-		<textarea id="full_text"></textarea>
-		<button type="button" onclick="generate_full_text_game()">생성</button>	
+	<div class="container">
+		<div>
+			<textarea id="full_text"></textarea>
+			<button type="button" onclick="generate_full_text_game()" class="btn btn-info">생성</button>	
+		</div>
+		<div class="bg game-room">
+		</div>
+		<button id="full_text_download" onclick="full_download()" class="btn btn-info">다운로드</button>
 	</div>
-	<div class="bg game-room">
-	</div>
-	<button id="full_text_download" onclick="full_download()">다운로드</button>
 </body>
 </html>
