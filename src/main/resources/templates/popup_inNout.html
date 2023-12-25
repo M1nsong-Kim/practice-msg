@@ -20,7 +20,7 @@
 	<div class="friendList2" th:each="friend : ${friendList}">
 		<input type='checkbox' name='friend' th:text="${friend?.name}">
 	</div>
-	<button onclick="getInNOutMsg(this);" name="1">입장</button>
-	<button onclick="getInNOutMsg(this);" name="2">퇴장</button>
+	<button onclick="getInNOutMsg(this);" name="1" class="btn btn-info">입장</button>
+	<button onclick="getInNOutMsg(this);" name="2" class="btn btn-info">퇴장</button>
 </body>
 </html>

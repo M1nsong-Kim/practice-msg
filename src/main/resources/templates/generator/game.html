@@ -13,7 +13,7 @@
 <body>
 	<div>
 		<div>생성을 누르지 않으면 이전 대화는 저장되지 않습니다.</div>
-		<button type="button">초기화</button>
+		<button type="button" class="btn btn-info">초기화</button>
 	</div>
 	
 	<br>
@@ -40,15 +40,15 @@
 		<!-- if로 가르기 -->
 			<!-- 상대로 등록된 리스트. value는 각각 idx -->
 		<input type="radio" name="speaker" id="speaker#" value="#">#
-		<button type="button" onclick="popup_friend();">+</button>
+		<button type="button" onclick="popup_friend();" class="btn btn-info">+</button>
 	</div>
 	
 	<div>
 		<input type="text" name="content" id="content" class="game" onkeyup="pressEnter(this);">
-		<button type="button" onclick="msgOnGame();">입력</button>
+		<button type="button" onclick="msgOnGame();" class="btn btn-info">입력</button>
 	</div>
 	<div>
-		<button type="submit" id="generator" onclick="popup_imgDownload();">생성</button>
+		<button type="submit" id="generator" onclick="popup_imgDownload();" class="btn btn-info">생성</button>
 	</div>
 </body>
 </html>
