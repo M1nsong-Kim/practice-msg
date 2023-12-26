@@ -15,15 +15,17 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row">
+		<div class="row m-3">
 			<textarea id="full_text"></textarea>
-			<button type="button" onclick="generate_full_text_game()" class="btn btn-info">생성</button>	
+			<button type="button" onclick="generate_full_text_game()" class="btn btn-info mt-3">생성</button>	
 		</div>
 		<div class="row">
 			<div class="bg game-room">
 			</div>
 		</div>
-		<button id="full_text_download" onclick="full_download()" class="btn btn-info position-absolute start-50 translate-middle-x" rows="10">다운로드</button>
+		<div class="mt-5">
+			<button id="full_text_download" onclick="full_download()" class="btn btn-info position-absolute start-50 translate-middle-x" rows="10">다운로드</button>
+		</div>
 	</div>
 </body>
 </html>
