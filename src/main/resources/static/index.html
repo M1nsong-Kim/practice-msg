@@ -5,25 +5,34 @@
 	<title>practice-msg</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-	<div class="container">
-		<div>
-			<h1>title</h1>
-		</div>
-		<div>
-			<a href="/generator/talk">
-				<button type="button" class="btn btn-info">messenger</button> <!-- messenger --> <br>
-			</a>
-			<button type="button" class="btn btn-info">msg1</button>	<!-- msg1 --> <br>
-			<button type="button" class="btn btn-info">msg2</button> <!-- msg2 --> <br>
-			<a href="/generator/game">
-				<button type="button" class="btn btn-info">online</button> <!-- online --> <br>
-			</a>
-			<a href="fullText/fullText_game">
-				<button type="button" class="btn btn-info">full text_game</button> <!-- online --> <br>
-			</a>
-		</div>
-	</div>
+    <div class="container">
+        <div class="text-center">
+            <h1>title</h1>
+            <a href="/generator/talk">
+                <button type="button" class="btn btn-info">messenger</button>
+            </a>
+            <button type="button" class="btn btn-info">msg1</button>
+            <button type="button" class="btn btn-info">msg2</button>
+            <a href="/generator/game">
+                <button type="button" class="btn btn-info">online</button>
+            </a>
+            <a href="fullText/fullText_game">
+                <button type="button" class="btn btn-info">full text_game</button>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
