@@ -11,52 +11,56 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div>
-		<div>생성을 누르지 않으면 이전 대화는 저장되지 않습니다.</div>
-		<button type="button" class="btn btn-info">초기화</button>
-	</div>
-	
-	<br>
-	<!-- 대화창 -->
-	<div class="bg">
-		
-	</div>
-	
-	<div>
-		<!-- 화자 -->
-		<input type="radio" name="speaker" id="speaker0" value="0" checked>나
-		<!-- if로 가르기 -->
-			<!-- 상대로 등록된 리스트. value는 각각 idx -->
-		<input type="radio" name="speaker" id="speaker#" value="#">#
-		<button type="button" onclick="popup_friend();" class="btn btn-info">+</button>
-		
-		<!-- 날짜 -->
-		<input type="radio" name="date" id="current_date" onclick="differentDT(this)" checked>오늘 날짜
-		<input type="radio" name="date" id="date" onclick="differentDT(this)"> 직접 입력
-		<span id="df_date"></span>
-		
-		<!-- 시간 -->
-		<input type="radio" name="time" id="current_time" onclick="differentDT(this)" checked>현재 시간
-		<input type="radio" name="time" id="time" onclick="differentDT(this)"> 직접 입력
-		<span id="df_time"></span>
-		<!-- 
-		<input type="radio">이전 시간 유지
-		 -->
-	</div>
-	
-	<div>
-		<input type="text" name="content" id="content" class="talk" onkeyup="pressEnter(this);">
-		<button type="button" onclick="msgOnTalk();" class="btn btn-info">입력</button>
-	</div>
-	<div>
-		<button type="button"  onclick="popup_inNout();" class="btn btn-info">입/퇴장 메시지</button>
-	</div>
-	<div>
-		<!-- onkeyup X -->
-		<button type="submit" id="generator" onclick="popup_imgDownload();" class="btn btn-info">생성</button>
-		<!-- 
-			<a href="#" download>생성</a>
-		 -->
+	<div class="container">
+		<div class="text-center">
+			<div>
+				<div>생성을 누르지 않으면 이전 대화는 저장되지 않습니다.</div>
+				<button type="button" class="btn btn-info">초기화</button>
+			</div>
+			
+			<br>
+			<!-- 대화창 -->
+			<div class="bg">
+				
+			</div>
+			
+			<div>
+				<!-- 화자 -->
+				<input type="radio" name="speaker" id="speaker0" value="0" checked>나
+				<!-- if로 가르기 -->
+					<!-- 상대로 등록된 리스트. value는 각각 idx -->
+				<input type="radio" name="speaker" id="speaker#" value="#">#
+				<button type="button" onclick="popup_friend();" class="btn btn-info">+</button>
+				
+				<!-- 날짜 -->
+				<input type="radio" name="date" id="current_date" onclick="differentDT(this)" checked>오늘 날짜
+				<input type="radio" name="date" id="date" onclick="differentDT(this)"> 직접 입력
+				<span id="df_date"></span>
+				
+				<!-- 시간 -->
+				<input type="radio" name="time" id="current_time" onclick="differentDT(this)" checked>현재 시간
+				<input type="radio" name="time" id="time" onclick="differentDT(this)"> 직접 입력
+				<span id="df_time"></span>
+				<!-- 
+				<input type="radio">이전 시간 유지
+				 -->
+			</div>
+			
+			<div>
+				<input type="text" name="content" id="content" class="talk" onkeyup="pressEnter(this);">
+				<button type="button" onclick="msgOnTalk();" class="btn btn-info">입력</button>
+			</div>
+			<div>
+				<button type="button"  onclick="popup_inNout();" class="btn btn-info">입/퇴장 메시지</button>
+			</div>
+			<div>
+				<!-- onkeyup X -->
+				<button type="submit" id="generator" onclick="popup_imgDownload();" class="btn btn-info">생성</button>
+				<!-- 
+					<a href="#" download>생성</a>
+				 -->
+			</div>
+		</div>
 	</div>
 </body>
 </html>
