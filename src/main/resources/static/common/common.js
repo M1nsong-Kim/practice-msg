@@ -239,3 +239,10 @@ function inOutMsg(inviter, user, idx){
 function popup_imgDownload(){
 	window.open('/popupImgDownload', 'popup_imgDownload', 'width=700px,height=800px,scrollbars=yes');
 }
+
+
+// 머리글, 바닥글
+$(document).ready(function(){
+    $('#header').load("/common/header.html");
+    $('#footer').load("/common/footer.html");
+});
